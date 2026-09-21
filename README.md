@@ -58,6 +58,31 @@
 
 ---
 
+## 目录结构
+
+```
+ujn-seat-booker/
+├── src/                   核心代码
+│   ├── cli.py             命令行入口（once / serve / gui / rooms / seats / validate-config / wake）
+│   ├── gui.py             Tkinter 图形界面
+│   ├── config.py          配置加载、目标日期解析、时间窗单一解析器（含周二特例）
+│   ├── session.py         SSO 登录与浏览器会话（会话缓存复用）
+│   ├── booker.py          抢座主流程：选座 → 解滑块 → 提交 → 结果核对
+│   ├── slider.py          滑块验证码缺口定位与类人拖动
+│   ├── scheduler.py       到点调度（迟到容忍窗口内补跑）
+│   ├── wake.py            防休眠 WakeLock
+│   ├── api.py             接口封装
+│   └── logger.py          日志
+├── scripts/               install_windows_task.ps1（Windows 计划任务安装 / 卸载）
+├── debug/                 回归测试（verify_*.py）与接口 / 页面结构样本
+├── dev/                   开发期存档脚本（探测、早期单测）— 非运行所需，见 dev/README.md
+├── config.example.json    配置模板（复制为 config.json 后填写）
+├── requirements.txt
+└── README.md
+```
+
+> `config.json`、`.session/`、`logs/` 含个人凭据与运行时数据，已在 `.gitignore` 中排除，不入库。
+
 ## 安装
 
 ```bash
