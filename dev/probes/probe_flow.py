@@ -3,12 +3,12 @@ import sys
 import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.config import Config
 from src.session import login_browser
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 DBG = ROOT / "debug"
 DBG.mkdir(exist_ok=True)
 

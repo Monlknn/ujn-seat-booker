@@ -1,7 +1,7 @@
 """Extract the reserve dialog `open` method + openCaptcha + start-time fetch to confirm seat.id source."""
 from pathlib import Path
 
-src = (Path(__file__).resolve().parent / "debug" / "app.js.txt").read_text(encoding="utf-8", errors="replace")
+src = (Path(__file__).resolve().parents[2] / "debug" / "app.js.txt").read_text(encoding="utf-8", errors="replace")
 
 def window(anchor, before=600, after=900):
     i = src.find(anchor)

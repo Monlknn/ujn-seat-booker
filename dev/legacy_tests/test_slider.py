@@ -5,7 +5,7 @@ from pathlib import Path
 
 from src.slider import _match_offset
 
-DBG = Path(__file__).resolve().parent / "debug"
+DBG = Path(__file__).resolve().parents[2] / "debug"
 g = json.loads((DBG / "api_genSlider.json").read_text(encoding="utf-8"))
 cap = g["captcha"]
 

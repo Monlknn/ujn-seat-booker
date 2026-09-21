@@ -13,7 +13,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-DBG = Path(__file__).resolve().parent / "debug"
+DBG = Path(__file__).resolve().parents[2] / "debug"
 g = json.loads((DBG / "api_genSlider.json").read_text(encoding="utf-8"))
 cap = g["captcha"]
 print("captcha keys:", list(cap.keys()))

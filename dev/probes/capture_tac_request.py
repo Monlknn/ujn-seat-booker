@@ -5,7 +5,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.config import load_config
 from src import session as br
 from src.booker import _js_root_vm, _js_find_vm, _make_date

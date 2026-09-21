@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-TXT = Path(__file__).resolve().parent / "debug" / "app.js.txt"
+TXT = Path(__file__).resolve().parents[2] / "debug" / "app.js.txt"
 src = TXT.read_text(encoding="utf-8", errors="replace")
 print("bundle length:", len(src))
 
@@ -38,7 +38,7 @@ for kw in keywords:
 # Inspect saved gen/SLIDER response (captcha) keys
 print("\n\n##### api_genSlider.json keys #####")
 try:
-    g = json.loads((Path(__file__).resolve().parent / "debug" / "api_genSlider.json").read_text(encoding="utf-8"))
+    g = json.loads((Path(__file__).resolve().parents[2] / "debug" / "api_genSlider.json").read_text(encoding="utf-8"))
     def walk(o, prefix=""):
         if isinstance(o, dict):
             for k, v in o.items():

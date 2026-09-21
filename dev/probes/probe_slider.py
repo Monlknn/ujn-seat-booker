@@ -13,7 +13,7 @@ import sys
 import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.config import Config, load_config
 from src import session as br
@@ -167,7 +167,7 @@ def main():
             gap_x, nbw, npw, score, margin = res
             print(f"gap_x={gap_x}  native_bg_w={nbw}  fraction={gap_x/nbw if nbw else None}  score={score:.1f}  margin={margin:.2f}")
         print("已保存调试图到 debug/tac_live_*.png 与 tac_live_dom.json；未拖动、未提交。")
-        page.screenshot(path=str(Path(__file__).resolve().parent / "debug" / "probe_slider_final.png"))
+        page.screenshot(path=str(Path(__file__).resolve().parents[2] / "debug" / "probe_slider_final.png"))
     finally:
         sess.close()
 

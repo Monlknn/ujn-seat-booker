@@ -1,13 +1,13 @@
 """实测：用浏览器完成 SSO 登录，验证登录态，并探查预约/滑块相关 DOM。不提交任何预约。"""
 import sys, json
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.config import Config
 from src.session import login_browser
 from src.logger import logger  # noqa: F401
 
-cfg = Config.load(Path(__file__).resolve().parent / "config.json")
+cfg = Config.load(Path(__file__).resolve().parents[2] / "config.json")
 
 # 用有头模式 + debug 便于观察
 sess = login_browser(cfg, headless=False)
@@ -61,7 +61,7 @@ if "sso.ujn.edu.cn" in page.url:
     except Exception as exc:
         print("  eval err:", exc)
     try:
-        page.screenshot(path=str(Path(__file__).resolve().parent / "debug" / "login_diag.png"))
+        page.screenshot(path=str(Path(__file__).resolve().parents[2] / "debug" / "login_diag.png"))
         print("  已保存诊断截图 debug/login_diag.png")
     except Exception as exc:
         print("  截图失败:", exc)

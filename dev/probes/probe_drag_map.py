@@ -9,7 +9,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.config import Config, load_config
 from src import session as br
@@ -167,7 +167,7 @@ def main():
             if p1 and p2:
                 print(f"piece left 移动: {p2['left'] - p1['left']:.1f}")
                 print(f"piece img left 移动: {p2['x'] - p1['x']:.1f}")
-        page.screenshot(path=str(Path(__file__).resolve().parent / "debug" / "probe_drag_map.png"))
+        page.screenshot(path=str(Path(__file__).resolve().parents[2] / "debug" / "probe_drag_map.png"))
     finally:
         sess.close()
 

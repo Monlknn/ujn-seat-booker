@@ -1,7 +1,7 @@
 """Inspect how fabric seat objects are created: is o.id the DB seat id?"""
 from pathlib import Path
 
-src = (Path(__file__).resolve().parent / "debug" / "app.js.txt").read_text(encoding="utf-8", errors="replace")
+src = (Path(__file__).resolve().parents[2] / "debug" / "app.js.txt").read_text(encoding="utf-8", errors="replace")
 
 def window(anchor, before=300, after=1100, tag=""):
     i = src.find(anchor)

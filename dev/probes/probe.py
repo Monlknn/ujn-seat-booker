@@ -1,12 +1,12 @@
 """只读探测：验证登录、阅览室列表、座位布局，不提交任何预约。"""
 import sys, json
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src import api as rest
 
 cfg = __import__("src.config", fromlist=["load_config"]).Config.load(
-    Path(__file__).resolve().parent / "config.json"
+    Path(__file__).resolve().parents[2] / "config.json"
 )
 
 print("== 1) 登录 ==")

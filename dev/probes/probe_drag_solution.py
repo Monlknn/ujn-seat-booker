@@ -9,7 +9,7 @@ import sys
 import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.config import Config, load_config
 from src import session as br
@@ -131,7 +131,7 @@ def main():
             page.wait_for_timeout(500)
             state = page.evaluate(f"""() => {{{JS_DIALOG_ACTION} return {{showCodeCheck: !!vm && vm.showCodeCheck, orderSuccess: !!vm && vm.orderSuccess}}; }}""")
             print(f"t+{t}ms:", state)
-        page.screenshot(path=str(Path(__file__).resolve().parent / "debug" / "probe_drag_solution.png"))
+        page.screenshot(path=str(Path(__file__).resolve().parents[2] / "debug" / "probe_drag_solution.png"))
         print("saved debug/probe_drag_solution.png")
     finally:
         sess.close()

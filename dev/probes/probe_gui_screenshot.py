@@ -1,5 +1,6 @@
 """截图保存当前 GUI 真实外观到 probe_gui.png。"""
 import os, sys
+from pathlib import Path
 sys.path.insert(0, os.getcwd())
 import tkinter as tk
 import tkinter.messagebox as mb
@@ -26,7 +27,7 @@ root.update()
 # 取窗口的窗口 ID 截屏
 try:
     import subprocess
-    out = r"C:\Users\lenovo\WorkBuddy\11\ujn-seat-booker\probe_gui.png"
+    out = str(Path(__file__).resolve().parents[2] / "probe_gui.png")
     # 用 powershell 把窗口画到 png
     script = (
         f"Add-Type -AssemblyName System.Drawing,System.Windows.Forms;"

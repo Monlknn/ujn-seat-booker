@@ -8,7 +8,7 @@ from PIL import Image
 
 from src.slider import _match_offset
 
-DBG = Path(__file__).resolve().parent / "debug"
+DBG = Path(__file__).resolve().parents[2] / "debug"
 bg_b = (DBG / "tac_live_bg.png").read_bytes()
 piece_b = (DBG / "tac_live_piece.png").read_bytes()
 
