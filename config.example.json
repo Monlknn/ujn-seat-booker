@@ -1,0 +1,45 @@
+{
+  "username": "你的学号",
+  "password": "你的密码",
+  "campus": "主校区",
+  "room": "第一阅览室",
+  "seat": "001",
+  "date": "tomorrow",
+  "start": "08:00",
+  "end": "12:00",
+  "tuesday": {
+    "enabled": true,
+    "start": "08:30",
+    "end": "12:00"
+  },
+  "mode": "browser",
+  "headless": true,
+  "browser_channel": "msedge",
+  "max_retry": 5,
+  "slide": {
+    "slider_candidates": [
+      ".slider-btn",
+      ".slide-block",
+      "#slider",
+      ".nc_iconfont.btn_slide",
+      ".yidun_slider",
+      ".captcha-slider-btn"
+    ],
+    "bg_candidates": [
+      ".slider-bg img",
+      ".slide-bg-img",
+      ".yidun_bgimg",
+      ".captcha-bg-img",
+      "img[src*='bg']"
+    ],
+    "piece_candidates": [
+      ".slider-piece img",
+      ".slide-block-img",
+      ".yidun_jigsaw",
+      ".captcha-piece-img",
+      "img[src*='fg']"
+    ],
+    "tolerance": 6
+  },
+  "debug": false
+}

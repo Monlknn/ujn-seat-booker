@@ -1,0 +1,41 @@
+# ── 凭据与本地会话（含学号 / 密码，绝不入库）─────────────────
+config.json
+.session/
+session_storage.json
+storage_state.json
+
+# ── AI 助手本地笔记 / 自动化缓存 ─────────────────────────────
+.workbuddy/
+
+# ── 运行时产物 ───────────────────────────────────────────────
+logs/
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# ── 调试产物：截图 / 网络抓包 / 站点源码副本（体积大且可能含账号信息）──
+debug/*.png
+debug/*.jpg
+debug/*.jpeg
+debug/*.gif
+debug/*.webp
+debug/*.bmp
+debug/*.json
+debug/*.html
+debug/*.txt
+debug/captchas/
+probe_gui.py
+probe_gui.png
+captchas/
+
+# ── 编辑器 / 系统 ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

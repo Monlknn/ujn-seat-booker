@@ -1,0 +1,16 @@
+# 济南大学图书馆座位自动预约（UJN Seat Booker）
+# 仿辽宁大学 LNU-LibSeat-Automation 改造而来，针对济南大学 seat.ujn.edu.cn 的座位预约系统。
+#
+# 与辽大项目的关键差异：
+#   1. 登录：济大登录（统一身份认证 SSO）不需要验证码，纯账号+密码即可。
+#   2. 验证码：济大在"预约提交"环节使用【滑块验证码】（辽大为文字点选验证码）。
+#   3. 本工具默认走已验证的 REST API 直连（rest/auth + freeBook），更快更稳；
+#      当接口被滑块拦截时，自动降级到 Playwright 浏览器模式真实拖动滑块过校验。
+#
+# 依赖见 requirements.txt。仅依赖 requests / Pillow / numpy / opencv-python-headless / playwright。
+
+requests>=2.31
+Pillow>=10.0
+numpy>=1.26
+opencv-python-headless>=4.9
+playwright>=1.44
